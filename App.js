@@ -1,13 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Task from './Task'
-import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
+import { Button, FormControl, Input, InputLabel , Typography} from '@material-ui/core';
 import './App.css';
 import db from './firebase';
-import {useEffect} from 'react';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
-
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 
 
 function App() {
@@ -16,8 +15,19 @@ function App() {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-
   };
+
+  const theme = createTheme({
+    typography: {
+      fontFamily: [
+        "Nunito",
+        "Roboto",
+        "Helvetica Neue",
+        "Arial",
+        "sans-serif"
+      ].join(",")
+    }
+  });
 
   //Short term memory
   const [tasks, setTasks] = useState([]);
@@ -49,7 +59,12 @@ function App() {
   return (
     <div className = 'bg_'>
       <div className="App">
-        <h1>To do list!</h1>
+      <ThemeProvider theme={theme}>
+      <Typography variant="h1">To Do List! </Typography>
+      </ThemeProvider>
+      <text>
+         {"\n"}
+      </text>
         
         <form>
         
@@ -69,7 +84,7 @@ function App() {
         <ul>
           {tasks.map(task => (
             //Get data from the task component
-            <div style = {styles}>
+            <div style = {styles} className = 'task_'>
               <Task task = {task}/>
             </div>
           ))}

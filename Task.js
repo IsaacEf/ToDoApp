@@ -1,7 +1,6 @@
 import React , {useState} from 'react'
-import {List, ListItemAvatar, ListItem, ListItemText, Modal} from '@material-ui/core' ;
+import {List, ListItemAvatar, ListItem, ListItemText, Modal, Button} from '@material-ui/core' ;
 import db from './firebase';
-import { Button } from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 
@@ -32,6 +31,7 @@ function Task(props) {
     }
 
     return (
+    
     <>
     <Modal
         open = {open}

@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  /* color: white; */
 }
 
 .App-link {
@@ -42,4 +42,15 @@
   background-color: grey;
   border: 4px outset black;
   border-radius: 10px;
+}
+
+.bg_{
+  width: 100%;
+  /* background-image: url(bg2.png);  */
+  display: inline-block;
+
+}
+
+.task_{
+  font-size: 50px;
 }
